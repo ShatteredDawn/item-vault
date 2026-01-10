@@ -6,7 +6,7 @@ local Storage = {}
 
 function Storage:isAllowedItem(item)
     if item == nil then
-        PrintError("Storage: No item found in the specified bag and slot.")
+        PrintError("Storage: Cannot evaluated allowed item on nil item.")
 
         return false
     end
@@ -30,7 +30,7 @@ function Storage:depositItem(player, item)
     local quantity_to_add = item:GetCount()
     local item_template_id = item:GetEntry()
 
-    PrintError("Storage: Depositing item_template_id " .. item_template_id .. " with quantity " .. quantity_to_add)
+    PrintDebug("Storage: Depositing item_template_id " .. item_template_id .. " with quantity " .. quantity_to_add)
 
     local updated_quantity = quantity_to_add
 
@@ -44,12 +44,12 @@ function Storage:depositItem(player, item)
     if ale_query ~= nil and ale_query:GetRowCount() > 0 then
         local row = ale_query:GetRow()
 
-        PrintError("Storage: Existing stored quantity: " .. row["quantity"])
+        PrintDebug("Storage: Existing stored quantity: " .. row["quantity"])
 
         updated_quantity = quantity_to_add + row["quantity"]
     end
 
-    PrintError("Storage: Updated stored quantity: " .. updated_quantity)
+    PrintDebug("Storage: Updated stored quantity: " .. updated_quantity)
 
     local update_query = UpdateStoredMaterialQuantityQuery:new{
         account_id = player:GetAccountId(),
@@ -59,7 +59,7 @@ function Storage:depositItem(player, item)
 
     update_query:execute()
 
-    PrintError("Storage: Removing item " .. item:GetGUIDLow() .. " (" .. quantity_to_add ..") from player's inventory.")
+    PrintDebug("Storage: Removing item " .. item:GetGUIDLow() .. " (" .. quantity_to_add ..") from player's inventory.")
 
     player:RemoveItem(item, quantity_to_add)
 

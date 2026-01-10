@@ -37,12 +37,9 @@ end
 function AbstractQuery:execute()
     local formatted_query = self:formatParameters()
 
-    PrintError("Executing query: " .. formatted_query)
+    PrintDebug("Executing query: " .. formatted_query)
 
-    -- return {}
     local result = CharDBQuery(formatted_query)
-
-    print(result)
 
     return result
 end

@@ -5,8 +5,6 @@ local ClientHandlerEnum = require("server-message-handler.definition.enum.client
 local ListAllHandler = AbstractHandler:extend()
 
 function ListAllHandler:execute(player)
-    PrintError("Player account ID: " .. player:GetAccountId())
-
     local query = SelectAllStoredMaterialQuery:new{
         account_id = player:GetAccountId(),
     }

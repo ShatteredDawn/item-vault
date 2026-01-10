@@ -13,21 +13,21 @@ function MaterialStorage:new()
 end
 
 function MaterialStorage:initializeDatabase()
-    PrintError("Initializing Material Storage database...")
+    PrintDebug("Initializing Material Storage database...")
 
     CreateDatabaseMigration:execute()
-    PrintError("Database created or already exists.")
-    PrintError("Creating storage table...")
+    PrintDebug("Database created or already exists.")
+    PrintDebug("Creating storage table...")
     CreateStorageTableMigration:execute()
-    PrintError("Storage table created or already exists.")
+    PrintDebug("Storage table created or already exists.")
 end
 
 function MaterialStorage:initializeServerMessageHandlers()
-    PrintError("Initializing Material Storage server message handlers...")
+    PrintDebug("Initializing Material Storage server message handlers...")
 
     RegisterClientRequests(ServerResponsesConfiguration)
 
-    PrintError("Server message handlers initialized.")
+    PrintDebug("Server message handlers initialized.")
 end
 
 function MaterialStorage:start()

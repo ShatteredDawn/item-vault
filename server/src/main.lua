@@ -4,4 +4,4 @@ local material_storage = MaterialStorage:new()
 
 material_storage:start()
 
-PrintError("Done.")
+PrintInfo("ItemVault: Module ready.")
