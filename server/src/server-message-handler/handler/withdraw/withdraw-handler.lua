@@ -87,7 +87,7 @@ function WithdrawHandler:execute(player, data)
 
     update_query:execute()
 
-    player:SendServerResponse("ItemVault", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, quantity_to_add + 1)
+    player:SendServerResponse("ItemVault", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, new_stored_quantity)
 
     return
 end
