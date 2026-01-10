@@ -18,7 +18,7 @@ on:
       mirror_branch:
         required: false
         type: string
-      flatten:
+      client_packaging:
         required: false
         type: boolean
         default: false
@@ -33,8 +33,10 @@ jobs:
       - name: Package folder
         run: |
           mkdir dist
-          if [ "${{ inputs.flatten }}" = "true" ]; then
-            cd ${{ inputs.folder }}
+          if [ "${{ inputs.client_packaging }}" = "true" ]; then
+            mkdir dist/ItemVault_Client
+            cp -R ${{ inputs.folder }} dist/ItemVault_Client/${{ inputs.folder }}
+            cd dist
             zip -r ../dist/${{ inputs.zip_name }} .
           else
             zip -r dist/${{ inputs.zip_name }} ${{ inputs.folder }}
