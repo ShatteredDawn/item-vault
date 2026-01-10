@@ -2,17 +2,17 @@ local CreateDatabaseMigration = require("migration.initial.database.create-datab
 local CreateStorageTableMigration = require("migration.initial.table.create-storage-table-migration")
 local ServerResponsesConfiguration = require("server-message-handler.configuration")
 
-local MaterialStorage = {}
+local ItemVault = {}
 
-function MaterialStorage:new()
+function ItemVault:new()
     local instance = {}
 
-    setmetatable(instance, { __index = MaterialStorage })
+    setmetatable(instance, { __index = ItemVault })
 
     return instance
 end
 
-function MaterialStorage:initializeDatabase()
+function ItemVault:initializeDatabase()
     PrintDebug("Initializing Material Storage database...")
 
     CreateDatabaseMigration:execute()
@@ -22,7 +22,7 @@ function MaterialStorage:initializeDatabase()
     PrintDebug("Storage table created or already exists.")
 end
 
-function MaterialStorage:initializeServerMessageHandlers()
+function ItemVault:initializeServerMessageHandlers()
     PrintDebug("Initializing Material Storage server message handlers...")
 
     RegisterClientRequests(ServerResponsesConfiguration)
@@ -30,9 +30,9 @@ function MaterialStorage:initializeServerMessageHandlers()
     PrintDebug("Server message handlers initialized.")
 end
 
-function MaterialStorage:start()
+function ItemVault:start()
     self:initializeDatabase()
     self:initializeServerMessageHandlers()
 end
 
-return MaterialStorage
+return ItemVault

@@ -24,7 +24,7 @@ function ListAllHandler:execute(player)
         until not aleQuery:NextRow()
     end
 
-    player:SendServerResponse("MaterialStorage", ClientHandlerEnum.LIST_ALL_RESPONSE, results)
+    player:SendServerResponse("ItemVault", ClientHandlerEnum.LIST_ALL_RESPONSE, results)
 end
 
 return ListAllHandler

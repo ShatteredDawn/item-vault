@@ -22,7 +22,7 @@ function DepositAllHandler:execute(player)
         ::continue::
     end
 
-    player:SendServerResponse("MaterialStorage", ClientHandlerEnum.DEPOSIT_ALL_RESPONSE)
+    player:SendServerResponse("ItemVault", ClientHandlerEnum.DEPOSIT_ALL_RESPONSE)
 end
 
 function DepositAllHandler:getAllInventoryMaterials(player)

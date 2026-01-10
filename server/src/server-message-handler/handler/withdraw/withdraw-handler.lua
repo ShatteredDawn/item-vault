@@ -18,7 +18,7 @@ function WithdrawHandler:execute(player, data)
     end
 
     if item_template_id == 0 then
-        player:SendServerResponse("MaterialStorage", ClientHandlerEnum.WITHDRAW_RESPONSE, 0, 0)
+        player:SendServerResponse("ItemVault", ClientHandlerEnum.WITHDRAW_RESPONSE, 0, 0)
 
         PrintError("WithdrawHandler: Invalid item_template_id provided.")
 
@@ -39,7 +39,7 @@ function WithdrawHandler:execute(player, data)
     end
 
     if stored_quantity < 1 then
-        player:SendServerResponse("MaterialStorage", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, 0)
+        player:SendServerResponse("ItemVault", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, 0)
 
         return
     end
@@ -47,7 +47,7 @@ function WithdrawHandler:execute(player, data)
     local free_inventory_slots = player_inspector:getFreeInventorySlots(player)
 
     if free_inventory_slots == 0 then
-        player:SendServerResponse("MaterialStorage", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, 0)
+        player:SendServerResponse("ItemVault", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, 0)
 
         return
     end
@@ -55,7 +55,7 @@ function WithdrawHandler:execute(player, data)
     local added_item = player:AddItem(item_template_id, 1)
 
     if not added_item then
-        player:SendServerResponse("MaterialStorage", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, 0)
+        player:SendServerResponse("ItemVault", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, 0)
 
         return
     end
@@ -87,7 +87,7 @@ function WithdrawHandler:execute(player, data)
 
     update_query:execute()
 
-    player:SendServerResponse("MaterialStorage", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, quantity_to_add + 1)
+    player:SendServerResponse("ItemVault", ClientHandlerEnum.WITHDRAW_RESPONSE, item_template_id, quantity_to_add + 1)
 
     return
 end

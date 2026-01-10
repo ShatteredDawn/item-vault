@@ -6,7 +6,7 @@ SelectAllStoredMaterialQuery.query = [[
     SELECT
         `item_template_id`, `quantity`
     FROM
-        `material_storage`.`storage`
+        `item_vault`.`storage`
     WHERE
         `account_id` = :account_id
 ]]

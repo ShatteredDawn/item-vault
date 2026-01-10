@@ -19,7 +19,7 @@ function DepositHandler:execute(player, data)
     local updated_quantity = Storage:depositItem(player, item)
     local item_template_id = item_template:GetItemId()
 
-    player:SendServerResponse("MaterialStorage", ClientHandlerEnum.DEPOSIT_RESPONSE, item_template_id, updated_quantity)
+    player:SendServerResponse("ItemVault", ClientHandlerEnum.DEPOSIT_RESPONSE, item_template_id, updated_quantity)
 end
 
 return DepositHandler

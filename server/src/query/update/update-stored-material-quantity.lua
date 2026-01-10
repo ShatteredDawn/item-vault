@@ -3,7 +3,7 @@ local AbstractQuery = require("query.abstract.abstract-query")
 local UpdateStoredMaterialQuantityQuery = AbstractQuery:extend()
 
 UpdateStoredMaterialQuantityQuery.query = [[
-    INSERT INTO `material_storage`.`storage` (
+    INSERT INTO `item_vault`.`storage` (
         `account_id`,
         `item_template_id`,
         `quantity`

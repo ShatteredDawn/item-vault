@@ -1,7 +1,7 @@
-local MaterialStorage = require("material-storage")
+local ItemVault = require("item-vault")
 
-local material_storage = MaterialStorage:new()
+local item_vault = ItemVault:new()
 
-material_storage:start()
+item_vault:start()
 
 PrintInfo("ItemVault: Module ready.")

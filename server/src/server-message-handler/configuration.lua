@@ -29,7 +29,7 @@ function Widthdraw(player, item_template_id)
 end
 
 local configuration = {
-    Prefix = "MaterialStorage",
+    Prefix = "ItemVault",
     Functions = {
         [ServerResponseEnum.LIST_ALL] = "ListAll",
         [ServerResponseEnum.DEPOSIT_ALL] = "DepositAll",
