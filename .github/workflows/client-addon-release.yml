@@ -1,0 +1,21 @@
+name: Release Client Addon
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Package client addon
+        run: |
+          zip -r ItemVault.zip client
+
+      - name: Upload artifact
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ItemVault.zip
+
