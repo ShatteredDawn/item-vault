@@ -22,6 +22,9 @@ on:
         required: false
         type: boolean
         default: false
+    secrets:
+      MIRROR_TOKEN:
+        required: true
 
 jobs:
   package:
@@ -29,6 +32,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Package folder
         run: |
@@ -47,6 +52,15 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: dist/${{ inputs.zip_name }}
+
+      - name: Debug token presence
+        run: |
+          if [ -z "${{ secrets.MIRROR_TOKEN }}" ]; then
+            echo "MIRROR_TOKEN is empty"
+            exit 1
+          else
+            echo "MIRROR_TOKEN is set"
+          fi
 
       - name: Push server mirror
         if: ${{ inputs.push_mirror == true }}
