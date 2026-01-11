@@ -14,9 +14,9 @@ This is a client-server module for ALE (AzerothCore) that implements a dedicated
 ## List of features
 
 - Holds up to 4 294 967 295 (maximum uint32) items of each type.
-- Deposit all command. (`/msda`)
-- Deposit specific item command. (`/msd bag slot`)
-- Retrieve item per stack with a simple right click on an item.
+- Deposit all command. (`/ivda`)
+- Deposit specific item command. (`/ivd bag slot`)
+- Retrieve item per stack with a simple right click on an item in the vault.
 - Full in game item tooltip support.
 - Compatible with HD clients that change textures.
 

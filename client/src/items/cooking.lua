@@ -1,0 +1,130 @@
+local _, internal = ...
+
+internal.appendData({
+	{
+		id = 43007,
+		name = "Northern Spices",
+		icon = "Interface\\Icons\\Inv_Misc_ammo_Gunpowder_05",
+		categories = { 185 },
+	},
+	{
+		id = 18255,
+		name = "Runn Tum Tuber",
+		icon = "Interface\\Icons\\INV_Misc_Food_55",
+		categories = { 185 },
+	},
+	{
+		id = 27676,
+		name = "Strange Spores",
+		icon = "Interface\\Icons\\INV_Misc_Dust_04",
+		categories = { 185 },
+	},
+	{
+		id = 6889,
+		name = "Small Egg",
+		icon = "Interface\\Icons\\INV_Egg_01",
+		categories = { 185 },
+	},
+	{
+		id = 3685,
+		name = "Raptor Egg",
+		icon = "Interface\\Icons\\INV_Egg_03",
+		categories = { 185 },
+	},
+	{
+		id = 12207,
+		name = "Giant Egg",
+		icon = "Interface\\Icons\\INV_Egg_03",
+		categories = { 185 },
+	},
+	{
+		id = 43501,
+		name = "Northern Egg",
+		icon = "Interface\\Icons\\INV_Egg_01",
+		categories = { 185 },
+	},
+	{
+		id = 5503,
+		name = "Clam Meat",
+		icon = "Interface\\Icons\\INV_Misc_Food_51",
+		categories = { 185 },
+	},
+	{
+		id = 5504,
+		name = "Tangy Clam Meat",
+		icon = "Interface\\Icons\\INV_Misc_Food_51",
+		categories = { 185 },
+	},
+	{
+		id = 4655,
+		name = "Giant Clam Meat",
+		icon = "Interface\\Icons\\INV_Misc_Food_51",
+		categories = { 185 },
+	},
+	{
+		id = 7974,
+		name = "Zesty Clam Meat",
+		icon = "Interface\\Icons\\INV_Misc_Food_51",
+		categories = { 185 },
+	},
+	{
+		id = 24477,
+		name = "Jaggal Clam Meat",
+		icon = "Interface\\Icons\\INV_Misc_Food_51",
+		categories = { 185 },
+	},
+	{
+		id = 36782,
+		name = "Succulent Clam Meat",
+		icon = "Interface\\Icons\\INV_Misc_Food_126_ClamMeat",
+		categories = { 185 },
+	},
+	{
+		id = 2674,
+		name = "Crawler Meat",
+		icon = "Interface\\Icons\\INV_Misc_Food_51",
+		categories = { 185 },
+	},
+	{
+		id = 12206,
+		name = "Tender Crab Meat",
+		icon = "Interface\\Icons\\INV_Misc_Food_51",
+		categories = { 185 },
+	},
+	{
+		id = 2675,
+		name = "Crawler Claw",
+		icon = "Interface\\Icons\\INV_Misc_Birdbeck_02",
+		categories = { 185 },
+	},
+	{
+		id = 13888,
+		name = "Darkclaw Lobster",
+		icon = "Interface\\Icons\\INV_Misc_Fish_14",
+		categories = { 185 },
+	},
+	{
+		id = 27439,
+		name = "Furious Crawdad",
+		icon = "Interface\\Icons\\INV_Misc_Fish_14",
+		categories = { 185 },
+	},
+	{
+		id = 41805,
+		name = "Borean Man O' War",
+		icon = "Interface\\Icons\\INV_Misc_Fish_49",
+		categories = { 185 },
+	},
+	{
+		id = 1468,
+		name = "Murloc Fin",
+		icon = "Interface\\Icons\\INV_Misc_MonsterScales_02",
+		categories = { 185 },
+	},
+	{
+		id = 730,
+		name = "Murloc Eye",
+		icon = "Interface\\Icons\\INV_Misc_Eye_01",
+		categories = { 185 },
+	},
+})

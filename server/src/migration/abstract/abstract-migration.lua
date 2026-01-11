@@ -4,7 +4,7 @@ local AbstractMigration = Extendable:extend()
 AbstractMigration.query = "SHOW TABLES"
 
 function AbstractMigration:execute()
-    CharDBExecute(self.query)
+	CharDBExecute(self.query)
 end
 
 return AbstractMigration

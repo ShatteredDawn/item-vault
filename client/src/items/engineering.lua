@@ -1,0 +1,198 @@
+local _, internal = ...
+
+internal.appendData({
+	{
+		id = 4359,
+		name = "Handful of Copper Bolts",
+		icon = "Interface\\Icons\\INV_Misc_Gear_06",
+		categories = { 202 },
+	},
+	{
+		id = 4361,
+		name = "Copper Tube",
+		icon = "Interface\\Icons\\INV_Gizmo_Pipe_02",
+		categories = { 202 },
+	},
+	{
+		id = 4363,
+		name = "Copper Modulator",
+		icon = "Interface\\Icons\\INV_Gizmo_03",
+		categories = { 202 },
+	},
+	{
+		id = 4371,
+		name = "Bronze Tube",
+		icon = "Interface\\Icons\\INV_Gizmo_Pipe_01",
+		categories = { 202 },
+	},
+	{
+		id = 4382,
+		name = "Bronze Framework",
+		icon = "Interface\\Icons\\INV_Gizmo_BronzeFramework_01",
+		categories = { 202 },
+	},
+	{
+		id = 4375,
+		name = "Whirring Bronze Gizmo",
+		icon = "Interface\\Icons\\INV_Gizmo_02",
+		categories = { 202 },
+	},
+	{
+		id = 4387,
+		name = "Iron Strut",
+		icon = "Interface\\Icons\\INV_Spear_05",
+		categories = { 202 },
+	},
+	{
+		id = 4404,
+		name = "Silver Contact",
+		icon = "Interface\\Icons\\INV_Ingot_04",
+		categories = { 202 },
+	},
+	{
+		id = 10558,
+		name = "Gold Power Core",
+		icon = "Interface\\Icons\\INV_Battery_02",
+		categories = { 202 },
+	},
+	{
+		id = 4389,
+		name = "Gyrochronatom",
+		icon = "Interface\\Icons\\INV_Misc_PocketWatch_02",
+		categories = { 202 },
+	},
+	{
+		id = 10560,
+		name = "Unstable Trigger",
+		icon = "Interface\\Icons\\INV_Battery_01",
+		categories = { 202 },
+	},
+	{
+		id = 10559,
+		name = "Mithril Tube",
+		icon = "Interface\\Icons\\INV_Musket_01",
+		categories = { 202 },
+	},
+	{
+		id = 10561,
+		name = "Mithril Casing",
+		icon = "Interface\\Icons\\INV_Gizmo_MithrilCasing_01",
+		categories = { 202 },
+	},
+	{
+		id = 9060,
+		name = "Inlaid Mithril Cylinder",
+		icon = "Interface\\Icons\\INV_Musket_01",
+		categories = { 202 },
+	},
+	{
+		id = 18631,
+		name = "Truesilver Transformer",
+		icon = "Interface\\Icons\\INV_Staff_18",
+		categories = { 202 },
+	},
+	{
+		id = 15994,
+		name = "Thorium Widget",
+		icon = "Interface\\Icons\\INV_Gizmo_04",
+		categories = { 202 },
+	},
+	{
+		id = 16000,
+		name = "Thorium Tube",
+		icon = "Interface\\Icons\\INV_Gizmo_Pipe_04",
+		categories = { 202 },
+	},
+	{
+		id = 16006,
+		name = "Delicate Arcanite Converter",
+		icon = "Interface\\Icons\\INV_Gizmo_07",
+		categories = { 202 },
+	},
+	{
+		id = 10647,
+		name = "Engineer's Ink",
+		icon = "Interface\\Icons\\INV_Potion_65",
+		categories = { 202 },
+	},
+	{
+		id = 7191,
+		name = "Fused Wiring",
+		icon = "Interface\\Icons\\INV_Misc_Gear_03",
+		categories = { 202 },
+	},
+	-- Burning Crusade
+	{
+		id = 23783,
+		name = "Handful of Fel Iron Bolts",
+		icon = "Interface\\Icons\\INV_Gizmo_FelIronBolts",
+		categories = { 202 },
+	},
+	{
+		id = 23782,
+		name = "Fel Iron Casing",
+		icon = "Interface\\Icons\\INV_Gizmo_FelIronCasing",
+		categories = { 202, 171 },
+	},
+	{
+		id = 23787,
+		name = "Felsteel Stabilizer",
+		icon = "Interface\\Icons\\INV_Gizmo_FelStabilizer",
+		categories = { 202 },
+	},
+	{
+		id = 23784,
+		name = "Adamantite Frame",
+		icon = "Interface\\Icons\\INV_Gizmo_AdamantiteFrame",
+		categories = { 202 },
+	},
+	{
+		id = 23785,
+		name = "Hardened Adamantite Tube",
+		icon = "Interface\\Icons\\INV_Gizmo_HardenedAdamantiteTube",
+		categories = { 202 },
+	},
+	{
+		id = 23786,
+		name = "Khorium Power Core",
+		icon = "Interface\\Icons\\INV_Gizmo_KhoriumPowerCore",
+		categories = { 202 },
+	},
+	{
+		id = 32423,
+		name = "Icy Blasting Primers",
+		icon = "Interface\\Icons\\INV_Misc_EngGizmos_15",
+		categories = { 202 },
+	},
+	-- Wrath of the Lich King
+	{
+		id = 39681,
+		name = "Handful of Cobalt Bolts",
+		icon = "Interface\\Icons\\INV_Misc_EngGizmos_29",
+		categories = { 202 },
+	},
+	{
+		id = 39690,
+		name = "Volatile Blasting Trigger",
+		icon = "Interface\\Icons\\INV_Misc_EngGizmos_04",
+		categories = { 202 },
+	},
+	{
+		id = 39682,
+		name = "Overcharged Capacitor",
+		icon = "Interface\\Icons\\INV_Misc_EngGizmos_27",
+		categories = { 202 },
+	},
+	{
+		id = 39683,
+		name = "Froststeel Tube",
+		icon = "Interface\\Icons\\INV_Misc_EngGizmos_28",
+		categories = { 202 },
+	},
+	{
+		id = 42546,
+		name = "Mana Injector Kit",
+		icon = "Interface\\Icons\\INV_Gizmo_04",
+		categories = { 202 },
+	},
+})

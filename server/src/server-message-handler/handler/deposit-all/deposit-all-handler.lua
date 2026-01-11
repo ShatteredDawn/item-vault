@@ -8,120 +8,120 @@ local concat_tables = require("utility.concat_tables")
 local DepositAllHandler = AbstractHandler:extend()
 
 function DepositAllHandler:execute(player)
-    local materials = self:getAllInventoryMaterials(player)
+	local materials = self:getAllInventoryMaterials(player)
 
-    for _, material in pairs(materials) do
-        local item = player:GetItemByPos(material.bag_slot, material.slot)
+	for _, material in pairs(materials) do
+		local item = player:GetItemByPos(material.bag_slot, material.slot)
 
-        if not item then
-            goto continue
-        end
+		if not item then
+			goto continue
+		end
 
-        Storage:depositItem(player, item)
+		Storage:depositItem(player, item)
 
-        ::continue::
-    end
+		::continue::
+	end
 
-    player:SendServerResponse("ItemVault", ClientHandlerEnum.DEPOSIT_ALL_RESPONSE)
+	player:SendServerResponse("ItemVault", ClientHandlerEnum.DEPOSIT_ALL_RESPONSE)
 end
 
 function DepositAllHandler:getAllInventoryMaterials(player)
-    local materials = {}
-    local main_bag_materials = self:getMainBagMaterials(player)
+	local materials = {}
+	local main_bag_materials = self:getMainBagMaterials(player)
 
-    materials = concat_tables(materials, main_bag_materials)
+	materials = concat_tables(materials, main_bag_materials)
 
-    local bags_materials = self:getBagsMaterials(player)
+	local bags_materials = self:getBagsMaterials(player)
 
-    materials = concat_tables(materials, bags_materials)
+	materials = concat_tables(materials, bags_materials)
 
-    return materials
+	return materials
 end
 
 function DepositAllHandler:getMainBagMaterials(player)
-    local materials = {}
+	local materials = {}
 
-    for slot = InventoryEnum.MAIN_BAG_SLOT_START, InventoryEnum.MAIN_BAG_SLOT_END do
-        local item = player:GetItemByPos(InventoryEnum.BAG_SLOT_DEFAULT, slot)
+	for slot = InventoryEnum.MAIN_BAG_SLOT_START, InventoryEnum.MAIN_BAG_SLOT_END do
+		local item = player:GetItemByPos(InventoryEnum.BAG_SLOT_DEFAULT, slot)
 
-        if not item then
-            goto continue
-        end
+		if not item then
+			goto continue
+		end
 
-        local item_template = item:GetItemTemplate()
+		local item_template = item:GetItemTemplate()
 
-        if not item_template then
-            goto continue
-        end
+		if not item_template then
+			goto continue
+		end
 
-        if not AllowedItemEnum[item_template:GetItemId()] then
-            goto continue
-        end
+		if not AllowedItemEnum[item_template:GetItemId()] then
+			goto continue
+		end
 
-        table.insert(materials, {
-            bag_slot = InventoryEnum.BAG_SLOT_DEFAULT,
-            slot = slot
-        })
+		table.insert(materials, {
+			bag_slot = InventoryEnum.BAG_SLOT_DEFAULT,
+			slot = slot
+		})
 
-        ::continue::
-    end
+		::continue::
+	end
 
-    return materials
+	return materials
 end
 
 function DepositAllHandler:getBagsMaterials(player)
-    local result = {}
+	local result = {}
 
-    for i = InventoryEnum.BAG_INVENTORY_SLOT_1, InventoryEnum.BAG_INVENTORY_SLOT_4 do
-        local bag_materials = self:getBagMaterials(player, i)
+	for i = InventoryEnum.BAG_INVENTORY_SLOT_1, InventoryEnum.BAG_INVENTORY_SLOT_4 do
+		local bag_materials = self:getBagMaterials(player, i)
 
-        result = concat_tables(result, bag_materials)
-    end
+		result = concat_tables(result, bag_materials)
+	end
 
-    return result
+	return result
 end
 
 function DepositAllHandler:getBagMaterials(player, bag_slot)
-    local materials = {}
+	local materials = {}
 
-    if bag_slot < InventoryEnum.BAG_INVENTORY_SLOT_1 or bag_slot > InventoryEnum.BAG_INVENTORY_SLOT_4 then
-        return
-    end
+	if bag_slot < InventoryEnum.BAG_INVENTORY_SLOT_1 or bag_slot > InventoryEnum.BAG_INVENTORY_SLOT_4 then
+		return
+	end
 
-    local bag = player:GetItemByPos(InventoryEnum.BAG_SLOT_DEFAULT, bag_slot)
+	local bag = player:GetItemByPos(InventoryEnum.BAG_SLOT_DEFAULT, bag_slot)
 
-    if not bag or not bag:IsBag() then
-        return
-    end
+	if not bag or not bag:IsBag() then
+		return
+	end
 
-    local bag_size = bag:GetBagSize()
+	local bag_size = bag:GetBagSize()
 
-    for slot = 0, bag_size do
-        local item = player:GetItemByPos(bag_slot, slot)
+	for slot = 0, bag_size do
+		local item = player:GetItemByPos(bag_slot, slot)
 
-        if not item then
-            goto continue
-        end
+		if not item then
+			goto continue
+		end
 
-        local item_template = item:GetItemTemplate()
+		local item_template = item:GetItemTemplate()
 
-        if not item_template then
-            goto continue
-        end
+		if not item_template then
+			goto continue
+		end
 
-        if not AllowedItemEnum[item_template:GetItemId()] then
-            goto continue
-        end
+		if not AllowedItemEnum[item_template:GetItemId()] then
+			goto continue
+		end
 
-        table.insert(materials, {
-            bag_slot = bag_slot,
-            slot = slot
-        })
+		table.insert(materials, {
+			bag_slot = bag_slot,
+			slot = slot
+		})
 
-        ::continue::
-    end
+		::continue::
+	end
 
-    return materials
+	return materials
 end
 
 return DepositAllHandler

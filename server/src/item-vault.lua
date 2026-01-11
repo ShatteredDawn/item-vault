@@ -5,34 +5,34 @@ local ServerResponsesConfiguration = require("server-message-handler.configurati
 local ItemVault = {}
 
 function ItemVault:new()
-    local instance = {}
+	local instance = {}
 
-    setmetatable(instance, { __index = ItemVault })
+	setmetatable(instance, { __index = ItemVault })
 
-    return instance
+	return instance
 end
 
 function ItemVault:initializeDatabase()
-    PrintDebug("Initializing Material Storage database...")
+	PrintDebug("Initializing Material Storage database...")
 
-    CreateDatabaseMigration:execute()
-    PrintDebug("Database created or already exists.")
-    PrintDebug("Creating storage table...")
-    CreateStorageTableMigration:execute()
-    PrintDebug("Storage table created or already exists.")
+	CreateDatabaseMigration:execute()
+	PrintDebug("Database created or already exists.")
+	PrintDebug("Creating storage table...")
+	CreateStorageTableMigration:execute()
+	PrintDebug("Storage table created or already exists.")
 end
 
 function ItemVault:initializeServerMessageHandlers()
-    PrintDebug("Initializing Material Storage server message handlers...")
+	PrintDebug("Initializing Material Storage server message handlers...")
 
-    RegisterClientRequests(ServerResponsesConfiguration)
+	RegisterClientRequests(ServerResponsesConfiguration)
 
-    PrintDebug("Server message handlers initialized.")
+	PrintDebug("Server message handlers initialized.")
 end
 
 function ItemVault:start()
-    self:initializeDatabase()
-    self:initializeServerMessageHandlers()
+	self:initializeDatabase()
+	self:initializeServerMessageHandlers()
 end
 
 return ItemVault
