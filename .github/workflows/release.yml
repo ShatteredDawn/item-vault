@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  release:
+    types: [ created ]
+
+jobs:
+  release-server:
+    uses: ./.github/workflows/release-template.yml
+    with:
+      folder: server
+      zip_name: item-vault-server.zip
+      push_mirror: true
+      mirror_repository: ShatteredDawn/item-vault-server-mirror
+      mirror_branch: main
+      client_packaging: false
+
+  release-client:
+    uses: ./.github/workflows/release-template.yml
+    with:
+      folder: client
+      zip_name: ItemVault_Client.zip
+      push_mirror: true
+      mirror_repository: ShatteredDawn/item-vault-client-mirror
+      mirror_branch: main
+      client_packaging: true

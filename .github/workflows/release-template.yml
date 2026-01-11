@@ -1,0 +1,55 @@
+name: Release Template
+on:
+  workflow_call:
+    inputs:
+      folder:
+        required: true
+        type: string
+      zip_name:
+        required: true
+        type: string
+      push_mirror:
+        required: false
+        type: boolean
+        default: false
+      mirror_repository:
+        required: false
+        type: string
+      mirror_branch:
+        required: false
+        type: string
+      client_packaging:
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Package folder
+        run: |
+          mkdir dist
+          if [ "${{ inputs.client_packaging }}" = "true" ]; then
+            mkdir dist/ItemVault_Client
+            cp -R ${{ inputs.folder }} dist/ItemVault_Client/${{ inputs.folder }}
+            cd dist
+            zip -r ../dist/${{ inputs.zip_name }} .
+          else
+            zip -r dist/${{ inputs.zip_name }} ${{ inputs.folder }}
+          fi
+
+      - name: Upload artifact to release
+        if: ${{ github.event_name == 'release' || github.event_name == 'workflow_dispatch' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/${{ inputs.zip_name }}
+
+      - name: Push server mirror
+        if: ${{ inputs.push_mirror == true }}
+        run: |
+          git subtree split --prefix=${{ inputs.folder }} --branch temp-mirror
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ inputs.mirror_repo }}.git temp-mirror:${{ inputs.mirror_branch }} --force
