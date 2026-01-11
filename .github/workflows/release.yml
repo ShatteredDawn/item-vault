@@ -14,6 +14,9 @@ jobs:
       mirror_repository: ShatteredDawn/item-vault-server-mirror
       mirror_branch: main
       client_packaging: false
+    secrets:
+      CI_MIRROR_SSH_KEY: ${{ secrets.CI_MIRROR_SSH_KEY }}
+      CI_MIRROR_SSH_KEY_PASSPHRASE: ${{ secrets.CI_MIRROR_SSH_KEY_PASSPHRASE }}
 
   release-client:
     uses: ./.github/workflows/release-template.yml
@@ -24,3 +27,7 @@ jobs:
       mirror_repository: ShatteredDawn/item-vault-client-mirror
       mirror_branch: main
       client_packaging: true
+    secrets:
+      CI_MIRROR_SSH_KEY: ${{ secrets.CI_MIRROR_SSH_KEY }}
+      CI_MIRROR_SSH_KEY_PASSPHRASE: ${{ secrets.CI_MIRROR_SSH_KEY_PASSPHRASE }}
+

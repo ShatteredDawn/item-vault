@@ -7,6 +7,15 @@ This is a client-server module for ALE (AzerothCore) that implements a dedicated
 ---
 </div>
 
+> [!IMPORTANT]
+> ## Disclaimer
+>
+> This ALE module for AzerothCore is provided for educational purposes only. The developers **do not endorse, support, or encourage private servers**. This project is intended to demonstrate UI/UX possibilities and game development techniques in the context of MMORPGs.
+>
+> **All intellectual property related to World of Warcraft belongs to Blizzard Entertainment.** This project is not affiliated with, endorsed by, or supported by Blizzard Entertainment in any way.
+>
+> **By using this software, you acknowledge that the authors are not responsible for any private server operations, legal issues, or other uses of this module outside of educational or research contexts.**
+
 ## Full in game GUI using Blizzard art, look and feel.
 
 ![in game item vault](docs/assets/default_ui.png)
@@ -14,9 +23,9 @@ This is a client-server module for ALE (AzerothCore) that implements a dedicated
 ## List of features
 
 - Holds up to 4 294 967 295 (maximum uint32) items of each type.
-- Deposit all command. (`/msda`)
-- Deposit specific item command. (`/msd bag slot`)
-- Retrieve item per stack with a simple right click on an item.
+- Deposit all command. (`/ivda`)
+- Deposit specific item command. (`/ivd bag slot`)
+- Retrieve item per stack with a simple right click on an item in the vault.
 - Full in game item tooltip support.
 - Compatible with HD clients that change textures.
 
@@ -51,11 +60,13 @@ If you are encountering issues while installing ALE, please ask for support on t
 
 Since we do not want to bundle and redistribute CSMH ourselves for multiple reasons, we will guide you through the installation of both components.
 
-1 - Go to the [CSMH Github repository](https://github.com/Foereaper/CSMH).
-2 - Download the ZIP available when clicking on `<> Code` at the top right corner of the screen.
+1) Go to the [CSMH Github repository](https://github.com/Foereaper/CSMH).
+2) Download the ZIP available when clicking on `<> Code` at the top right corner of the screen.
+
 ![CSMH code download](docs/assets/code_download.png)
-3 - Extract the ZIP wherever you want.
-4 - Copy the `Server` folder to your `lua_scripts` directory within your ALE installation. We **strongly** suggest renaming it to `SMH` for `Server Message Handler`.
+
+3) Extract the ZIP wherever you want.
+4) Copy the `Server` folder to your `lua_scripts` directory within your ALE installation. We **strongly** suggest renaming it to `SMH` for `Server Message Handler`.
 
 #### 3. Install Item Vault
 
@@ -97,11 +108,13 @@ The downside of this method is that you will need to manually download each vers
 
 Since we do not want to bundle and redistribute CSMH ourselves for multiple reasons, we will guide you through the installation of both components.
 
-1 - Go to the [CSMH Github repository](https://github.com/Foereaper/CSMH).
-2 - Download the ZIP available when clicking on `<> Code` at the top right corner of the screen.
+1) Go to the [CSMH Github repository](https://github.com/Foereaper/CSMH).
+2) Download the ZIP available when clicking on `<> Code` at the top right corner of the screen.
+
 ![CSMH code download](docs/assets/code_download.png)
-3 - Extract the ZIP wherever you want.
-4 - Copy the `Client` folder to your `interface\addons` directory within your game client installation. The addon **must** be named `CMH` for `Client Message Handler`, otherwise our addon will complain about a missing dependency.
+
+3) Extract the ZIP wherever you want.
+4) Copy the `Client` folder to your `interface\addons` directory within your game client installation. The addon **must** be named `CMH` for `Client Message Handler`, otherwise our addon will complain about a missing dependency.
 
 #### 3. Install Item Vault
 

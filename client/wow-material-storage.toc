@@ -1,0 +1,38 @@
+## Interface: 30300
+## Version: 0.0.1
+## Title : Material Storage
+## Notes: Material Storage
+## Author: Zamralik
+## Dependency : CMH
+## SavedVariables: MaterialStorage_Data
+
+src\1-configuration.lua
+src\2-data.lua
+
+src\items\herb.lua
+src\items\scribe.lua
+src\items\alchemy.lua
+src\items\first-aid.lua
+src\items\cloth.lua
+src\items\silk.lua
+src\items\dye.lua
+src\items\thread.lua
+src\items\leather.lua
+src\items\feather.lua
+src\items\scale.lua
+src\items\carapace.lua
+src\items\cooking.lua
+src\items\fish.lua
+src\items\meat.lua
+src\items\elemental.lua
+src\items\enchant.lua
+src\items\mineral.lua
+src\items\engineering.lua
+src\items\gems.lua
+src\items\pearl.lua
+src\items\miscellaneous.lua
+
+src\3-server-proxy.lua
+src\4-create-panel.lua
+src\5-facade.lua
+src\6-commands.lua

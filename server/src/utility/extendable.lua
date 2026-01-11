@@ -1,13 +1,13 @@
 local Extendable = {}
 
 function Extendable:extend()
-    local subclass = {}
+	local subclass = {}
 
-    subclass.__index = subclass
+	subclass.__index = subclass
 
-    setmetatable(subclass, { __index = self })
+	setmetatable(subclass, { __index = self })
 
-    return subclass
+	return subclass
 end
 
 return Extendable

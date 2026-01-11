@@ -22,13 +22,21 @@ on:
         required: false
         type: boolean
         default: false
+    secrets:
+      CI_MIRROR_SSH_KEY:
+        required: true
+      CI_MIRROR_SSH_KEY_PASSPHRASE:
+        required: true
 
 jobs:
   package:
     runs-on: ubuntu-latest
+    environment: 'deployment'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Package folder
         run: |
@@ -48,8 +56,14 @@ jobs:
         with:
           files: dist/${{ inputs.zip_name }}
 
-      - name: Push server mirror
+      - name: Push mirror
         if: ${{ inputs.push_mirror == true }}
+        env:
+          CI_MIRROR_SSH_KEY: ${{ secrets.CI_MIRROR_SSH_KEY }}
+          CI_MIRROR_SSH_KEY_PASSPHRASE: ${{ secrets.CI_MIRROR_SSH_KEY_PASSPHRASE }}
         run: |
-          git subtree split --prefix=${{ inputs.folder }} --branch temp-mirror
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ inputs.mirror_repo }}.git temp-mirror:${{ inputs.mirror_branch }} --force
+          ./.github/scripts/push-mirror.sh \
+            "${{ inputs.folder }}" \
+            "${{ inputs.mirror_repository }}" \
+            "${{ inputs.mirror_branch }}" \
+            "${GITHUB_REF_NAME}"
