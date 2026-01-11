@@ -39,9 +39,7 @@ local function format_quantity(quantity)
 	return "*"
 end
 
-local function updateItemButton(button)
-	local quantity = internal.getItemQuantity(button:GetID())
-
+local function updateItemButton(button, quantity)
 	button.count = quantity;
 
 	local counter = _G[button:GetName().."Count"];
@@ -58,9 +56,16 @@ local function updateItemButton(button)
 end
 internal.updateItemButton = updateItemButton
 
+local function refreshItemButton(button)
+	local quantity = internal.getItemQuantity(button:GetID())
+
+	updateItemButton(button, quantity)
+end
+internal.refreshItemButton = refreshItemButton
+
 local function refreshAllButtons()
 	for i, button in ipairs(internal.itemSlots) do
-		internal.updateItemButton(button, internal.getItemQuantity(button:GetID()))
+		refreshItemButton(button)
 	end
 end
 internal.refreshAllButtons = refreshAllButtons
