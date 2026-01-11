@@ -52,4 +52,4 @@ jobs:
         if: ${{ inputs.push_mirror == true }}
         run: |
           git subtree split --prefix=${{ inputs.folder }} --branch temp-mirror
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ inputs.mirror_repo }}.git temp-mirror:${{ inputs.mirror_branch }} --force
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ inputs.mirror_repository }}.git temp-mirror:${{ inputs.mirror_branch }} --force
