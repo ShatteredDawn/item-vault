@@ -14,6 +14,8 @@ jobs:
       mirror_repository: ShatteredDawn/item-vault-server-mirror
       mirror_branch: main
       client_packaging: false
+    secrets:
+      MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
 
   release-client:
     uses: ./.github/workflows/release-template.yml
@@ -24,3 +26,5 @@ jobs:
       mirror_repository: ShatteredDawn/item-vault-client-mirror
       mirror_branch: main
       client_packaging: true
+    secrets:
+      MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
