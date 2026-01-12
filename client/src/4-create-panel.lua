@@ -77,7 +77,7 @@ local function initializeItemButton(button, item)
 
 	button.categories = item.categories
 	SetItemButtonTexture(button, item.icon)
-	updateItemButton(button, item.quantity)
+	refreshItemButton(button)
 
 	button:SetScript(
 		"OnClick",
