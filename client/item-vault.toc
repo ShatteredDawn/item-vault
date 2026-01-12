@@ -1,10 +1,9 @@
 ## Interface: 30300
-## Version: 0.0.1
-## Title : Material Storage
-## Notes: Material Storage
+## Version: 0.1.2
+## Title : Item Vault
+## Notes: Store all your reagents and more
 ## Author: Zamralik
 ## Dependency : CMH
-## SavedVariables: MaterialStorage_Data
 
 src\1-configuration.lua
 src\2-data.lua
