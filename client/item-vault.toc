@@ -1,5 +1,5 @@
 ## Interface: 30300
-## Version: 0.1.2
+## Version: 0.1.3
 ## Title : Item Vault
 ## Notes: Store all your reagents and more
 ## Author: Zamralik
