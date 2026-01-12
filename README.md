@@ -4,6 +4,7 @@
 
 This is a client-server module for ALE (AzerothCore) that implements a dedicated item storage to hold many items.
 
+[![Release](https://github.com/ShatteredDawn/item-vault/actions/workflows/release.yml/badge.svg?event=release)](https://github.com/ShatteredDawn/item-vault/actions/workflows/release.yml)
 ---
 </div>
 
@@ -15,6 +16,9 @@ This is a client-server module for ALE (AzerothCore) that implements a dedicated
 > **All intellectual property related to World of Warcraft belongs to Blizzard Entertainment.** This project is not affiliated with, endorsed by, or supported by Blizzard Entertainment in any way.
 >
 > **By using this software, you acknowledge that the authors are not responsible for any private server operations, legal issues, or other uses of this module outside of educational or research contexts.**
+
+> [!WARNING]
+> This software is licensed under the GNU GPL v3 license which implies copyleft. Please refer to the license for more information.
 
 ## Full in game GUI using Blizzard art, look and feel.
 
