@@ -6,6 +6,7 @@ on:
 
 jobs:
   release-server:
+    environment: 'deploy'
     uses: ./.github/workflows/release-template.yml
     with:
       folder: server
@@ -18,6 +19,7 @@ jobs:
       MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
 
   release-client:
+    environment: 'deploy'
     uses: ./.github/workflows/release-template.yml
     with:
       folder: client
