@@ -188,6 +188,12 @@ internal.appendData({
 		categories = { 185 },
 	},
 	{
+		id = 2296,
+		name = "Great Goretusk Snout",
+		icon = "Interface\\Icons\\INV_Misc_Head_Quillboar_01",
+		categories = { 0 },
+	},
+	{
 		id = 5471,
 		name = "Stag Meat",
 		icon = "Interface\\Icons\\INV_Misc_Pelt_Wolf_Ruin_03",

@@ -8,6 +8,18 @@ internal.appendData({
 		categories = { 185 },
 	},
 	{
+		id = 732,
+		name = "Okra",
+		icon = "Interface\\Icons\\INV_Misc_Herb_05",
+		categories = { 0 },
+	},
+	{
+		id = 1274,
+		name = "Hops",
+		icon = "Interface\\Icons\\INV_Misc_Herb_08",
+		categories = { 0 },
+	},
+	{
 		id = 18255,
 		name = "Runn Tum Tuber",
 		icon = "Interface\\Icons\\INV_Misc_Food_55",

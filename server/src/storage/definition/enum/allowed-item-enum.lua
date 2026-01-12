@@ -674,4 +674,7 @@ return {
 	[7392] = "Green Whelp Scale",
 	[39151] = "Alabaster Pigment",
 	[5466] = "Scorpid Stinger",
+	[732] = "Okra",
+	[1274] = "Hops",
+	[2296] = "Great Goretusk Snout",
 }
