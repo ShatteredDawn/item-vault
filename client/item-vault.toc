@@ -1,5 +1,5 @@
 ## Interface: 30300
-## Version: 0.1.3
+## Version: 0.1.4
 ## Title : Item Vault
 ## Notes: Store all your reagents and more
 ## Author: Zamralik
@@ -30,6 +30,7 @@ src\items\engineering.lua
 src\items\gems.lua
 src\items\pearl.lua
 src\items\miscellaneous.lua
+src\items\zul-gurub.lua
 
 src\3-server-proxy.lua
 src\4-create-panel.lua
